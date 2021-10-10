@@ -622,14 +622,23 @@
 			<plugin>
  				<groupId>org.apache.maven.plugins</groupId> 
 				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven-javadoc-plugin.version}</version>
 				<executions> 
 					<execution>
 						<id>attach-javadocs</id> 
 						<goals> 
 							<goal>jar</goal> 
 						</goals> 
-						</execution>
-					</executions>
+						<configuration>
+                					<additionalparam>-Xdoclint:none</additionalparam>
+           					</configuration>
+					</execution>
+				</executions>
+				<configuration>
+       					 <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
+        				 <excludePackageNames>com.vu.poc.test.objects</excludePackageNames>
+       					 <overview />
+   				 </configuration>
 			</plugin>
 			<!-- </plugin> <plugin> <groupId>org.apache.maven.plugins</groupId> 
 				<artifactId>maven-gpg-plugin</artifactId> <version>1.5</version> <executions> 
