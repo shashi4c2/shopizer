@@ -631,6 +631,11 @@
 						</goals> 
 					</execution>
 				</executions>
+				<configuration>
+        				<javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
+        				<excludePackageNames>com.vu.poc.test.objects</excludePackageNames>
+        				<overview />
+    				</configuration>
 			</plugin>
 			<!-- </plugin> <plugin> <groupId>org.apache.maven.plugins</groupId> 
 				<artifactId>maven-gpg-plugin</artifactId> <version>1.5</version> <executions> 
