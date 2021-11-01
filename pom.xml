@@ -84,19 +84,6 @@
 		<coverage.branches>.37</coverage.branches>
 
 	</properties>
-	<distributionManagement>
-    		<repository>
-        		<id>central</id>
-        		<name>ip-172-31-2-236-releases</name>
-        		<url>http://13.235.91.102:8081/artifactory/my-maven-repo</url>
-    		</repository>
-    	<snapshotRepository>
-        	<id>snapshots</id>
-        	<name>ip-172-31-2-236-snapshots</name>
-       	 	<url>http://13.235.91.102:8081/artifactory/my-maven-repo</url>
-    	</snapshotRepository>
-
-	</distributionManagement>
 	<!--BOM -->
 	<dependencyManagement>
 		<dependencies>
