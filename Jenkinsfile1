@@ -22,7 +22,7 @@ pipeline {
 	    {
 	    steps {
             echo "Artifacts"
-	    archiveArtifacts 'sm-shop/target/*.jar, sm-shop/target/*.war'
+	    archiveArtifacts 'sm-shop/target/*.jar'
 	    }
 	}
 	stage('Test Results')
