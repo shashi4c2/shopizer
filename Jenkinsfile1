@@ -1,0 +1,36 @@
+pipeline {
+    agent {
+        node {
+            label 'ubuntu'
+        }
+    }
+    stages {
+        stage('GIT')
+            {
+            steps {
+			git 'https://github.com/shashi4c2/shopizer.git'
+            }
+        }   
+		stage('Build from Maven ROOT')
+			{
+			steps {
+			echo "building root POM from maven project"
+			sh 'mvn clean install'
+			}	
+		}
+		stage('Archieve Artifacts')
+		    {
+		    steps {
+		    echo "Artifacts"
+		    archiveArtifacts 'sm-shop/target/*.jar, sm-shop/target/*.war'
+		    }
+		}
+		stage('Test Results')
+		    {
+		    steps {
+		    echo "Results"
+		    junit 'sm-shop/target/surefire-reports/*.xml'
+		    }
+		}
+    }
+}
